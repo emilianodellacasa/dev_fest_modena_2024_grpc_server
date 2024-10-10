@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package commands;
+
+service CommandService {
+  rpc GetCommand (Device) returns (Command) {}
+}
+
+message Device {
+  string identifier = 1;
+}
+
+message Command {
+  int32 id = 1;
+  string request = 2;
+}
